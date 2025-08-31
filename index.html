@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Павло Січкар — Категорійний менеджер</title>
+  <meta name="description" content="Лендінг-резюме Павла Січкаря: категорійний менеджер / KAM. Досвід у Kasta, навички, освіта, контакти." />
+  <meta name="theme-color" content="#16a34a" />
+  <style>
+    :root{
+      --bg: #0b0e11;
+      --panel:#0f1318;
+      --card:#11161d;
+      --ink:#e7edf7;
+      --muted:#9fb1c7;
+      --brand:#16a34a;
+      --brand2:#22c55e;
+      --accent:#2563eb;
+      --border:#1b2531;
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --r: 16px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f6f7fb; --panel:#ffffff; --card:#ffffff; --ink:#0b1220; --muted:#4b5563;
+        --brand:#16a34a; --brand2:#22c55e; --accent:#2563eb; --border:#e5e7eb; --shadow:0 12px 30px rgba(0,0,0,.08);
+      }
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, 'Helvetica Neue', Arial;
+      background:
+        radial-gradient(1200px 600px at -10% -10%, rgba(34,197,94,.18), transparent 60%),
+        radial-gradient(1000px 500px at 110% 10%, rgba(37,99,235,.15), transparent 60%),
+        var(--bg);
+      color:var(--ink); -webkit-font-smoothing:antialiased; line-height:1.6;
+    }
+    .container{ width:min(1080px,94vw); margin:0 auto; padding:24px 0 80px; }
+    /* Topbar */
+    .topbar{
+      position:sticky; top:10px; z-index:50; background:rgba(255,255,255,.02);
+      border:1px solid var(--border); border-radius:12px; box-shadow:var(--shadow);
+      backdrop-filter:saturate(1.2) blur(8px);
+    }
+    .topbar ul{list-style:none; margin:0; padding:6px; display:flex; gap:6px; flex-wrap:wrap; align-items:center; justify-content:center}
+    .topbar a{
+      text-decoration:none; color:var(--muted); padding:8px 12px; border-radius:10px; display:block; font-size:14px;
+    }
+    .topbar a:hover,.topbar a.active{ background:rgba(22,163,74,.18); color:var(--ink)}
+
+    /* Hero */
+    .hero{
+      margin-top:16px; padding:22px; border:1px solid var(--border); border-radius:var(--r);
+      background:linear-gradient(120deg, rgba(22,163,74,.16), rgba(37,99,235,.12));
+      box-shadow:var(--shadow); position:relative; overflow:hidden;
+    }
+    .hero-grid{ display:grid; gap:18px; grid-template-columns:140px 1fr; align-items:center; }
+    .avatar{ width:124px; height:124px; border-radius:50%; overflow:hidden; border:2px solid rgba(255,255,255,.12); box-shadow:var(--shadow) }
+    .avatar img{ width:100%; height:100%; object-fit:cover; }
+    .hero h1{ margin:0; font-size:clamp(28px,4.8vw,40px); line-height:1.1 }
+    .subtitle{ color:var(--muted); margin-top:6px }
+    .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px }
+    .badge{
+      border:1px solid var(--border); background:var(--card); padding:6px 10px; border-radius:999px; font-size:12px;
+    }
+    .cta{ display:flex; flex-wrap:wrap; gap:10px; margin-top:14px }
+    .btn{
+      appearance:none; border:0; border-radius:12px; padding:10px 14px; font-weight:600; cursor:pointer;
+      color:white; background:linear-gradient(135deg,var(--brand),var(--brand2)); box-shadow:var(--shadow);
+      display:inline-flex; gap:8px; align-items:center; text-decoration:none;
+    }
+    .btn.secondary{ color:var(--ink); background:transparent; border:1px solid var(--border) }
+    .section{ margin-top:28px }
+    .title{ font-size:20px; margin:0 0 12px; display:flex; gap:8px; align-items:center }
+    .grid.two{ display:grid; gap:16px }
+    .grid.three{ display:grid; gap:16px }
+    @media (min-width:900px){
+      .grid.two{ grid-template-columns:1.1fr .9fr }
+      .grid.three{ grid-template-columns:repeat(3,1fr) }
+    }
+    .card{ background:var(--card); border:1px solid var(--border); border-radius:var(--r); padding:18px; box-shadow:var(--shadow) }
+    .muted{ color:var(--muted); font-size:14px }
+    .list{ margin:8px 0 0 0; padding:0 0 0 18px }
+    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:6px }
+    .chip{ border:1px solid var(--border); padding:6px 10px; border-radius:999px; font-size:12px; background:var(--panel) }
+
+    /* Experience */
+    .exp{ display:grid; gap:12px }
+    .exp-item{ border:1px dashed var(--border); border-radius:12px; padding:14px; background:linear-gradient(180deg, rgba(255,255,255,.04), transparent) }
+    .exp-item h3{ margin:0; font-size:18px }
+    .exp-meta{ display:flex; gap:12px; color:var(--muted); font-size:13px; flex-wrap:wrap }
+    .divider{ height:1px; background:var(--border); margin:16px 0 }
+
+    /* Footer */
+    footer{ margin-top:28px; color:var(--muted); font-size:13px; text-align:center }
+
+    /* Mobile */
+    @media (max-width:720px){
+      .hero-grid{ grid-template-columns:1fr }
+      .avatar{ width:92px; height:92px }
+      .grid.two,.grid.three{ grid-template-columns:1fr }
+      .topbar{ top:6px }
+    }
+
+    /* Animations (subtle) */
+    [data-fx]{ opacity:0; transform:translateY(8px); transition:.5s ease }
+    [data-fx].in{ opacity:1; transform:none }
+  </style>
+  <script>
+    // Scrollspy + appear
+    document.addEventListener('DOMContentLoaded', () => {
+      const spyLinks = document.querySelectorAll('.topbar a');
+      const secs = [...spyLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+      const act = id => spyLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href')==='#'+id));
+      const onScroll = () => {
+        let cur = secs[0]?.id;
+        for(const s of secs) if(s.getBoundingClientRect().top <= 140) cur = s.id;
+        if(cur) act(cur);
+      };
+      document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+      // reveal on view
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=> e.isIntersecting && e.target.classList.add('in'));
+      }, {rootMargin:'-10% 0px -10% 0px', threshold:.1});
+      document.querySelectorAll('[data-fx]').forEach(el=>io.observe(el));
+
+      // Print
+      const printBtns = document.querySelectorAll('[data-action="print"]');
+      const safePrint = () => setTimeout(()=>window.print(), 40);
+      printBtns.forEach(b=> b.addEventListener('click', (e)=>{ e.preventDefault(); safePrint(); }));
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <nav class="topbar" aria-label="Навігація">
+      <ul>
+        <li><a href="#about" class="active">Про мене</a></li>
+        <li><a href="#experience">Досвід</a></li>
+        <li><a href="#skills">Навички</a></li>
+        <li><a href="#education">Освіта</a></li>
+        <li><a href="#contact">Контакти</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero" id="top" data-fx>
+      <div class="hero-grid">
+        <div class="avatar"><img src="photo.jpg" alt="Фото Павла Січкаря" loading="lazy" /></div>
+        <div>
+          <h1>Павло Січкар</h1>
+          <div class="subtitle">Категорійний менеджер / Key Account Manager (e‑commerce, fashion & consumer goods)</div>
+          <div class="badges">
+            <span class="badge">7+ років досвіду</span>
+            <span class="badge">Аналітика продажів</span>
+            <span class="badge">B2B переговори</span>
+            <span class="badge">Оптимізація процесів</span>
+          </div>
+          <div class="cta">
+            <a class="btn" href="#contact">Зв’язатися</a>
+            <button class='btn secondary' data-action='print'>Друк / PDF</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="about" class="section" data-fx>
+      <h2 class="title">🚀 Про мене</h2>
+      <div class="grid two">
+        <div class="card">
+          <p>Категорійний менеджер із багаторічним досвідом у marketplace/e‑commerce (Kasta / Modna Kasta).
+          Поєдную <strong>аналітику, закупівлі та переговори</strong> з постачальниками, запускаю нові напрямки та покращую процеси.</p>
+          <ul class="list">
+            <li>Запровадив та розвинув модель <strong>власного імпорту (1P)</strong> стокових товарів.</li>
+            <li>Оптимізував рутину: інструкції, впорядкування контенту, швидший цикл «закупівля → продаж».</li>
+            <li>Люблю новизну в технологіях і продуктах, комфортно працюю в динаміці.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="muted">Фокус:</div>
+          <div class="chips">
+            <span class="chip">Категорійний менеджмент</span>
+            <span class="chip">Закупівлі / імпорт (1P)</span>
+            <span class="chip">KAM</span>
+            <span class="chip">Контроль маржинальності</span>
+            <span class="chip">Планування акцій</span>
+            <span class="chip">Моніторинг конкурентів</span>
+          </div>
+          <div style="height:10px"></div>
+          <div class="muted">Інструменти:</div>
+          <div class="chips">
+            <span class="chip">Excel / Google Sheets</span>
+            <span class="chip">1С</span>
+            <span class="chip">Power BI (баз.)</span>
+            <span class="chip">HTML/CSS (баз.)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section" data-fx>
+      <h2 class="title">💼 Досвід</h2>
+      <div class="card">
+        <div class="exp">
+          <article class="exp-item">
+            <h3>KAM / Категорійний менеджер — <strong>Kasta (раніше Modna Kasta)</strong></h3>
+            <div class="exp-meta"><span>11.2022 – нині</span><span>Київ</span></div>
+            <ul class="list">
+              <li>Запуск і розвиток проекту власного імпорту стокових товарів (модель 1P).</li>
+              <li>Пошук постачальників і лотів, переговори, підтримка партнерств.</li>
+              <li>Логістика, митне оформлення, прийом товарів у 1С.</li>
+              <li>Контент, розцінка, планування продажів та маркетингових активностей.</li>
+              <li>Контроль маржинальності, аналіз продажів, моніторинг ринку.</li>
+              <li>Створення інструкцій та оптимізація рутинних процесів.</li>
+            </ul>
+          </article>
+
+          <article class="exp-item">
+            <h3>Асистент KAM (взуття/одяг/аксесуари) — <strong>Kasta</strong></h3>
+            <div class="exp-meta"><span>04.2021 – 10.2022</span><span>Київ</span></div>
+            <ul class="list">
+              <li>Формування акцій, контроль акційних цін.</li>
+              <li>Онбординг та інтеграція постачальників.</li>
+              <li>Моніторинг цін конкурентів, закупка товару.</li>
+            </ul>
+          </article>
+
+          <article class="exp-item">
+            <h3>Асистент байера (категорія взуття) — <strong>Kasta</strong></h3>
+            <div class="exp-meta"><span>11.2019 – 04.2021</span><span>Київ</span></div>
+            <ul class="list">
+              <li>Флеш‑сейли, погодження акційних цін, закупівля.</li>
+              <li>Контроль прийому на склад, завантаження контенту.</li>
+              <li>Аналітика продажів, саппорт постачальників.</li>
+            </ul>
+          </article>
+
+          <article class="exp-item">
+            <h3>Мол. спеціаліст зі збуту (споживча електроніка) — <strong>Kasta</strong></h3>
+            <div class="exp-meta"><span>02.2019 – 09.2019</span><span>Київ</span></div>
+            <ul class="list">
+              <li>Запуск напряму «Споживча електроніка», закупівля на основі аналітики.</li>
+              <li>Контроль прийому на склад, документообіг, комунікація з дистриб’юторами.</li>
+            </ul>
+          </article>
+
+          <article class="exp-item">
+            <h3>Контент‑менеджер — <strong>Kasta (раніше Modna Kasta)</strong></h3>
+            <div class="exp-meta"><span>03.2018 – 02.2019</span><span>Київ</span></div>
+            <ul class="list">
+              <li>Оновлення асортименту на сайті, підтримка постачальників.</li>
+              <li>Формування звітів та контроль даних.</li>
+            </ul>
+          </article>
+
+          <article class="exp-item">
+            <h3>Асистент байера — <strong>Kasta (Modna Kasta)</strong></h3>
+            <div class="exp-meta"><span>03.2016 – 09.2017</span><span>Київ</span></div>
+            <ul class="list">
+              <li>Робота з постачальниками, аналіз списків товарів.</li>
+              <li>Планування/моніторинг продажів, створення карток товарів.</li>
+              <li>Навчання нових спеціалістів.</li>
+            </ul>
+          </article>
+
+          <article class="exp-item">
+            <h3>Продавець‑консультант — <strong>Comfy</strong></h3>
+            <div class="exp-meta"><span>07.2015 – 02.2016</span><span>Київ</span></div>
+            <ul class="list">
+              <li>Продаж техніки та послуг; підвищення з 3‑ї до 1‑ї категорії за 2 місяці.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section" data-fx>
+      <h2 class="title">🛠️ Навички</h2>
+      <div class="grid three">
+        <div class="card">
+          <div class="muted">Core</div>
+          <ul class="list">
+            <li>Категорійний менеджмент, закупівлі, імпорт (1P)</li>
+            <li>B2B переговори, управління постачальниками</li>
+            <li>Планування акцій, асортименту та цін</li>
+            <li>Контроль маржинальності, аналіз продажів</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="muted">Аналітика & інструменти</div>
+          <ul class="list">
+            <li>Excel / Google Sheets (просунутий)</li>
+            <li>1С, Power BI (баз.)</li>
+            <li>HTML/CSS (баз.)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="muted">Soft skills</div>
+          <ul class="list">
+            <li>Оптимізація процесів, автоматизація рутини</li>
+            <li>Командна взаємодія та менторство</li>
+            <li>Орієнтація на результат, відповідальність</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section" data-fx>
+      <h2 class="title">🎓 Освіта</h2>
+      <div class="card">
+        <strong>НУБіП України</strong> — Землевпорядкування, кадастр, картографія<br/>
+        <span class="muted">2011 – 2014, Київ</span>
+      </div>
+    </section>
+
+    <section id="contact" class="section" data-fx>
+      <h2 class="title">📬 Контакти</h2>
+      <div class="card">
+        <p><strong>Телефон:</strong> <a href="tel:+380939387974" style="color:inherit">+38 (093) 938‑79‑74</a></p>
+        <p><strong>Email:</strong> <a href="mailto:pavel.si4kar@gmail.com" style="color:inherit">pavel.si4kar@gmail.com</a></p>
+        <div class="cta">
+          <a class="btn" href="mailto:pavel.si4kar@gmail.com?subject=Запрошення%20на%20співбесіду">Запросити на співбесіду</a>
+          
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2025 Павло Січкар · Лендінг‑резюме</footer>
+  </div>
+
+  <style>
+    @media print{
+      .topbar,.btn,.cta{ display:none !important }
+      body{ background:white !important }
+      .hero,.card{ background:white !important; box-shadow:none !important }
+      .container{ padding:0 }
+      .section{ page-break-inside:avoid }
+    }
+  </style>
+</body>
+</html>
