@@ -69,6 +69,27 @@
       color:white; background:linear-gradient(135deg,var(--brand),var(--brand2)); box-shadow:var(--shadow);
       display:inline-flex; gap:8px; align-items:center; text-decoration:none;
     }
+    .btn.third {
+  appearance: none;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+  color: white;
+  background: linear-gradient(
+    135deg,
+    rgba(205, 180, 219, 0.7), /* пурпур з прозорістю */
+    rgba(162, 210, 255, 0.7)  /* голубий з прозорістю */
+  );
+  box-shadow: var(--shadow);
+
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  text-decoration: none;
+}
     .btn.secondary{ color:var(--ink); background:transparent; border:1px solid var(--border) }
     .section{ margin-top:28px }
     .title{ font-size:20px; margin:0 0 12px; display:flex; gap:8px; align-items:center }
@@ -323,7 +344,7 @@
         <div class="cta">
           <a class="btn" href="mailto:pavel.si4kar@gmail.com?subject=Запрошення%20на%20співбесіду">Запросити на співбесіду</a>
           <button class="btn secondary" data-action="print">📄Друк / ⬇️PDF</button>
-          <button onclick="document.getElementById('qrModal').style.display='flex'" class="btn px-4 py-2 bg-blue-600 text-white rounded shadow">
+          <button onclick="document.getElementById('qrModal').style.display='flex'" class="btn third px-4 py-2 bg-blue-600 text-white rounded shadow">
       📱 Сканувати QR-код
     </button>
         </div>
