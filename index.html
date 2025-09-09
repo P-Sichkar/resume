@@ -338,7 +338,8 @@
 
     <section id="contact" class="section" data-fx>
       <h2 class="title">📬 Контакти</h2>
-      <div class="card">
+      <div class="card contact-grid">
+        <div class="contact-info">
         <p><strong>📞Телефон:</strong> <a href="tel:+380939387974" style="color:inherit">+38 (093) 938‑79‑74</a></p>
         <p><strong>✉️Email:</strong> <a href="mailto:pavel.si4kar@gmail.com" style="color:inherit">pavel.si4kar@gmail.com</a></p>
         <div class="cta">
@@ -347,8 +348,11 @@
           <button onclick="document.getElementById('qrModal').style.display='flex'" class="btn third px-4 py-2 bg-blue-600 text-white rounded shadow">
       📱 Сканувати QR-код
     </button>
+          </div>
         </div>
-        
+        <div class="qr-wrapper">
+      <img class="qr-print" src="qr.png" alt="QR Code">
+    </div>        
       </div>
       <div id="qrModal" style="display: none; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); align-items: center; justify-content: center; z-index: 1000;">
   <div style="background:#fff; padding:20px; border-radius:12px; text-align:center; position:relative; max-width:90%;">
@@ -363,7 +367,19 @@
   </div>
 
   <style>
+    .contact-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+    .qr-print { display: none; }
     @media print{
+      .qr-print {
+    display: block !important;
+    width: 30mm;
+    height: 30mm;
+    margin-left: 10mm;
+  }
       .topbar,.btn,.cta{ display:none !important }
       body{ background:white !important }
       .hero,.card{ background:white !important; box-shadow:none !important }
